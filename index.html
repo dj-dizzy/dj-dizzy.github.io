@@ -159,7 +159,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 /* about */
 .about-grid{display:grid;gap:clamp(2.5rem,6vw,5rem)}
 .about-media{position:relative;overflow:hidden;background:var(--surface);aspect-ratio:2/3;border-radius:4px}
-.about-media img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.about-media img{width:100%;height:100%;object-fit:cover;object-position:50% 35%}
 .about-copy{display:grid;gap:clamp(1.5rem,3vw,2.25rem);align-content:center}
 .quote{font:900 clamp(1.125rem,1.4vw + .8rem,1.5rem)/1.3 var(--display);letter-spacing:-.01em;color:var(--ink);padding-left:1.25rem;border-left:2px solid var(--red);text-wrap:balance}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;border-top:1px solid var(--line);padding-top:1.5rem}
@@ -199,12 +199,19 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .tile{position:relative;overflow:hidden;background:var(--surface);border-radius:4px}
 .tile img{position:absolute;left:0;top:-10%;width:100%;height:120%;object-fit:cover}
 .tile-a{aspect-ratio:1}
-.tile-b{aspect-ratio:16/10}
-.tile-c{aspect-ratio:16/9}
+.tile-a img{object-position:50% 45%}
+.tile-b{aspect-ratio:4/5}
+.tile-b img{object-position:50% 42%}
+.tile-c{aspect-ratio:3/4}
+.tile-c img{object-position:50% 12%}
+@media (min-width:640px) and (max-width:1023px){
+  .tiles{grid-template-columns:1fr 1fr}
+  .tile-a{grid-column:1/-1;aspect-ratio:16/10}
+  .tile-b,.tile-c{aspect-ratio:4/5}
+}
 @media (min-width:1024px){
-  .tiles{grid-template-columns:1.15fr .85fr;grid-template-rows:auto auto}
+  .tiles{grid-template-columns:1.35fr .65fr;grid-template-rows:auto auto}
   .tile-a{grid-row:1/3;aspect-ratio:auto}
-  .tile-b,.tile-c{aspect-ratio:16/10}
 }
 .statement{margin-top:clamp(4rem,9vw,7rem);max-width:22ch}
 
@@ -366,7 +373,7 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
       <figure class="about-media reveal-img">
         <picture>
           <source type="image/avif" srcset="assets/img/portrait-800.avif 800w, assets/img/portrait-1200.avif 1200w, assets/img/portrait-1600.avif 1600w" sizes="(min-width:1024px) 40vw, 100vw">
-          <img src="assets/img/portrait-1200.webp" srcset="assets/img/portrait-800.webp 800w, assets/img/portrait-1200.webp 1200w, assets/img/portrait-1600.webp 1600w" sizes="(min-width:1024px) 40vw, 100vw" width="1600" height="2400" loading="lazy" decoding="async" alt="Studio portrait of DJ Dizzy in black, holding a red cap">
+          <img src="assets/img/portrait-1200.webp" srcset="assets/img/portrait-800.webp 800w, assets/img/portrait-1200.webp 1200w, assets/img/portrait-1600.webp 1600w" sizes="(min-width:1024px) 40vw, 100vw" width="1600" height="2400" loading="lazy" decoding="async" alt="Studio portrait of DJ Dizzy in black, a red cap in his hand">
         </picture>
       </figure>
       <div class="about-copy">
@@ -418,20 +425,20 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
       <div class="tiles">
         <figure class="tile tile-a">
           <picture>
-            <source type="image/avif" srcset="assets/img/club-540.avif 540w, assets/img/club-720.avif 720w, assets/img/club-1440.avif 1440w" sizes="(min-width:1024px) 55vw, 100vw">
-            <img class="parallax" data-speed="10" src="assets/img/club-1440.webp" srcset="assets/img/club-540.webp 540w, assets/img/club-720.webp 720w, assets/img/club-1440.webp 1440w" sizes="(min-width:1024px) 55vw, 100vw" width="1440" height="1440" loading="lazy" decoding="async" alt="DJ Dizzy in a fur coat on the decks in a packed club, shot from above">
+            <source type="image/avif" srcset="assets/img/club-540.avif 540w, assets/img/club-720.avif 720w, assets/img/club-1440.avif 1440w" sizes="(min-width:1024px) 60vw, 100vw">
+            <img class="parallax" data-speed="10" src="assets/img/club-1440.webp" srcset="assets/img/club-540.webp 540w, assets/img/club-720.webp 720w, assets/img/club-1440.webp 1440w" sizes="(min-width:1024px) 60vw, 100vw" width="1440" height="1440" loading="lazy" decoding="async" alt="DJ Dizzy in a fur coat on the decks in a packed club, shot from above">
           </picture>
         </figure>
         <figure class="tile tile-b">
           <picture>
-            <source type="image/avif" srcset="assets/img/crowd-540.avif 540w, assets/img/crowd-720.avif 720w, assets/img/crowd-1086.avif 1086w" sizes="(min-width:1024px) 40vw, 100vw">
-            <img class="parallax" data-speed="-7" src="assets/img/crowd-1086.webp" srcset="assets/img/crowd-540.webp 540w, assets/img/crowd-720.webp 720w, assets/img/crowd-1086.webp 1086w" sizes="(min-width:1024px) 40vw, 100vw" width="1086" height="678" loading="lazy" decoding="async" alt="A festival crowd with phones in the air under teal lights">
+            <source type="image/avif" srcset="assets/img/porsche-540.avif 540w, assets/img/porsche-720.avif 720w, assets/img/porsche-1086.avif 1086w" sizes="(min-width:1024px) 30vw, (min-width:640px) 50vw, 100vw">
+            <img class="parallax" data-speed="-6" src="assets/img/porsche-1086.webp" srcset="assets/img/porsche-540.webp 540w, assets/img/porsche-720.webp 720w, assets/img/porsche-1086.webp 1086w" sizes="(min-width:1024px) 30vw, (min-width:640px) 50vw, 100vw" width="1086" height="1619" loading="lazy" decoding="async" alt="DJ Dizzy laughing on the floor in front of a white Porsche, rose petals around him">
           </picture>
         </figure>
         <figure class="tile tile-c">
           <picture>
-            <source type="image/avif" srcset="assets/img/decks-540.avif 540w, assets/img/decks-720.avif 720w, assets/img/decks-1086.avif 1086w" sizes="(min-width:1024px) 40vw, 100vw">
-            <img class="parallax" data-speed="6" src="assets/img/decks-1086.webp" srcset="assets/img/decks-540.webp 540w, assets/img/decks-720.webp 720w, assets/img/decks-1086.webp 1086w" sizes="(min-width:1024px) 40vw, 100vw" width="1086" height="568" loading="lazy" decoding="async" alt="Decks glowing red through the smoke">
+            <source type="image/avif" srcset="assets/img/art-540.avif 540w, assets/img/art-720.avif 720w, assets/img/art-1086.avif 1086w" sizes="(min-width:1024px) 30vw, (min-width:640px) 50vw, 100vw">
+            <img class="parallax" data-speed="5" src="assets/img/art-1086.webp" srcset="assets/img/art-540.webp 540w, assets/img/art-720.webp 720w, assets/img/art-1086.webp 1086w" sizes="(min-width:1024px) 30vw, (min-width:640px) 50vw, 100vw" width="1086" height="1946" loading="lazy" decoding="async" alt="DJ Dizzy at night under a stop sign sprayed with the word art">
           </picture>
         </figure>
       </div>
